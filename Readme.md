@@ -1,13 +1,6 @@
-# VTetrisField
-A vue3 component which draws tetris game field from fumen code.
+# DPC solutions
 
-[Demo](https://flaribbit.github.io/v-tetris-field/)
-
-![preview](.github/demo.png)
-
-### Development and Demo
-    pnpm install
-    pnpm dev
-
-### Build
-    pnpm build
+thanks to:
+- https://github.com/flaribbit/v-tetris-field
+- http://tetris.johnbeak.cz/dpc/builds.php
+- https://four.lol/perfect-clears/dpc
