@@ -1,15 +1,18 @@
 <template>
-  <h2>TFumenPlayer</h2>
-  <TFumenPlayer :fumen="fumen" :page="0" />
-  <h2>TFumenList</h2>
-  <TFumenList :fumen="fumen" :height="10" />
+  <h1>DPC</h1>
+  <h2>Extra O</h2>
+  <TDPC v-for="i in extra_O" v-bind="i" />
+  <h2>Extra T</h2>
+  <TDPC v-for="i in extra_T" v-bind="i" />
+  <h2>Extra S</h2>
+  <TDPC v-for="i in extra_S" v-bind="i" />
+  <h2>Extra Z</h2>
+  <TDPC v-for="i in extra_Z" v-bind="i" />
 </template>
 
 <script setup lang="ts">
-import TFumenPlayer from '../src/TFumenPlayer.vue';
-import TFumenList from '../src/TFumenList.vue';
-var fumen = "v115@vhPJHYaAkeEfEXoC+BlvlzByEEfE03k2AlP5ABwfAA?A+rQAAqsBsqBvtBTpBVhQeAlvlzByEEfE03k2AlP5ABwvDf?E33ZBBlfbOBV5AAAOfQeAlvlzByEEfE03+2BlP5ABwvDfEV?5k2AlPJVBjzAAA6WQAAzdBpeB0XBXUBFlQnAlvlzByEEfE0?3+2BlP5ABwvDfEXhWEBUYPNBkkuRA1GCLBUupAAdqQnAlvl?zByEEfE038UBlP5ABwvDfEXhWEBUYPNBkkuRA1GCLBU+rAA?AAPAA"
-if (location.search.length > 0) fumen = location.search.substring(1);
+import TDPC from "../src/TDPC.vue";
+import { extra_O, extra_T, extra_S, extra_Z } from "../src/data";
 </script>
 
 <style>
