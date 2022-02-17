@@ -1,4 +1,4 @@
-import { merge_pages, mirror_field } from "./fumen"
+import { merge_pages, mirror_comments, mirror_name } from "./fumen"
 interface DPC {
   name: string,
   build_fumen: string,
@@ -7,28 +7,10 @@ interface DPC {
   mirror?: boolean
 }
 
-function mirror_name(name: string): string {
-  const mirror_map = (c: string) => {
-    switch (c) {
-      case "Z":
-        return "S"
-      case "S":
-        return "Z"
-      case "L":
-        return "J"
-      case "J":
-        return "L"
-      default:
-        return c
-    }
-  }
-
-  return [...name].map(x => mirror_map(x)).join('')
-}
-
 function mirror_DPC(d: DPC): DPC {
   let t = { ...d }
   t.name = mirror_name(t.name)
+  t.solutions_fumen = mirror_comments(t.solutions_fumen)
   t.mirror = !!!t.mirror
   return t
 }
@@ -87,4 +69,4 @@ const extra_L: Array<DPC> = [
 
 const extra_J = extra_L.map(x => mirror_DPC(x))
 
-export { DPC, extra_O, extra_T, extra_S, extra_Z, extra_J, extra_L, extra_I }
+export { DPC, extra_O, extra_T, extra_S, extra_Z, extra_J, extra_L, extra_I, mirror_name }
